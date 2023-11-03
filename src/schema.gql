@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateVideoDto {
+  description: String
+  filename: String!
+  tags: [String!]!
+  title: String!
+  videoUrl: Upload
+}
+
+type Mutation {
+  createVideo(createVideoDto: CreateVideoDto!, video: Upload!): Video!
+  deleteVideo(id: ID!): Boolean!
+  updateVideo(updateVideoDto: updateVideoDto!): Video!
+}
+
+type Query {
+  getAllvideos: [Video!]!
+  getvideo(id: Int!): Video!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+type Video {
+  _id: ID!
+  description: String!
+  filename: String!
+  tags: [String!]!
+  title: String
+  videoUrl: String!
+}
+
+input updateVideoDto {
+  description: String
+  filename: String
+  id: Int!
+  tags: [String!]
+  title: String
+  videoUrl: Upload
+}
